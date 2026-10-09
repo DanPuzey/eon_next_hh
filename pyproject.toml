@@ -1,0 +1,15 @@
+[project]
+name = "eon-next-hh"
+version = "0.1.0"
+description = "Home Assistant integration importing E.ON Next half-hourly electricity consumption into long-term statistics"
+requires-python = ">=3.14.2"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pytest-homeassistant-custom-component==0.13.371",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
