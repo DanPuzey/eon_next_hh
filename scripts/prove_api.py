@@ -48,7 +48,7 @@ def check(label: str, ok: bool, detail: str = "") -> bool:
 
 async def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--env-file", type=Path, default=ROOT.parent / "eon-usage" / ".env")
+    parser.add_argument("--env-file", type=Path, default=ROOT / ".env")
     args = parser.parse_args()
     load_env_file(args.env_file)
     email, password = os.environ.get("EON_EMAIL"), os.environ.get("EON_PASSWORD")

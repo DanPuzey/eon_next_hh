@@ -31,7 +31,7 @@ Requires Home Assistant 2026.10 or later.
 1. In HACS, open the menu → **Custom repositories**, add this repository's URL and choose type **Integration**.
 2. Install **E.ON Next Half-Hourly**, then restart Home Assistant.
 
-HACS expects `custom_components/` and `hacs.json` at the root of the repository. If this folder sits inside a larger repository, publish it as a repository of its own first, for example with `git subtree split --prefix eon_next_hh -b eon_next_hh` and pushing that branch.
+HACS only works with public GitHub repositories. If you keep this repository private, use the manual install instead.
 
 ### Manual
 
@@ -126,10 +126,10 @@ tests/             pytest-homeassistant-custom-component tests, fixture data onl
 `api.py` and `buckets.py` don't import Home Assistant, so you can reuse them from a CLI. `scripts/prove_api.py` shows how to load `api.py` directly:
 
 ```
-uv run --no-project --with aiohttp --with tzdata python scripts/prove_api.py --env-file path/to/.env
+uv run --no-project --with aiohttp --with tzdata python scripts/prove_api.py 
 ```
 
-That reads `EON_EMAIL` and `EON_PASSWORD`, then checks login, token refresh, recovery from a rejected token, paging and the BST days against your real account. E.ON rate-limits logins ("Too many requests"), so don't run it repeatedly in quick succession.
+That reads `EON_EMAIL` and `EON_PASSWORD`, from the environment or a `.env` file in the repository root (`--env-file` to use another), then checks login, token refresh, recovery from a rejected token, paging and the BST days against your real account. E.ON rate-limits logins ("Too many requests"), so don't run it repeatedly in quick succession.
 
 Tests make no network calls. Home Assistant doesn't run on native Windows, so on Windows run them under WSL:
 
