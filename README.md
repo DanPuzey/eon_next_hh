@@ -24,7 +24,7 @@ There are also three diagnostic sensors on the meter's device:
 
 ## Installation
 
-Requires Home Assistant 2026.10 or later.
+Requires Home Assistant 2026.9 or later.
 
 ### HACS
 
