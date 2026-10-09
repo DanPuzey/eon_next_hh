@@ -1,0 +1,104 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sign in to E.ON Next",
+        "description": "Your password is stored so the integration can sign in again when its weekly refresh token expires. It is never logged.",
+        "data": {
+          "email": "Email",
+          "password": "Password",
+          "backfill_days": "Days of history to import"
+        },
+        "data_description": {
+          "backfill_days": "Imported once, on first setup, in 7-day chunks. It resumes if Home Assistant restarts part-way through."
+        }
+      },
+      "meter": {
+        "title": "Choose a meter",
+        "description": "Your account has more than one electricity meter. Add the integration again to import another.",
+        "data": {
+          "mpan": "Meter"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Sign in to E.ON Next again",
+        "description": "E.ON Next rejected the stored password for {email}.",
+        "data": {
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "E.ON Next rejected the email or password.",
+      "cannot_connect": "Could not reach E.ON Next. Try again later."
+    },
+    "abort": {
+      "already_configured": "This meter is already set up.",
+      "no_meters": "No electricity import meters were found on this account.",
+      "reauth_successful": "Signed in again."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Off-peak windows",
+        "description": "Local (UK) time ranges such as 00:00-07:00, one per line. Ranges may cross midnight and must start and end on the hour or half-hour. Half-hours outside every window count as peak. Changes apply to hours re-imported from now on; use the backfill action to reclassify older history.",
+        "data": {
+          "offpeak_windows": "Off-peak windows"
+        }
+      }
+    },
+    "error": {
+      "invalid_window": "{window}"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "last_data": {
+        "name": "Last data timestamp"
+      },
+      "sync_status": {
+        "name": "Last sync status",
+        "state": {
+          "pending": "Pending",
+          "backfilling": "Backfilling",
+          "ok": "OK",
+          "error": "Error",
+          "reauth_required": "Sign-in required"
+        },
+        "state_attributes": {
+          "detail": { "name": "Detail" },
+          "last_success": { "name": "Last success" },
+          "backfill_progress": { "name": "Backfill progress" }
+        }
+      },
+      "missing_intervals": {
+        "name": "Missing intervals (7 days)",
+        "state_attributes": {
+          "missing": { "name": "Missing" },
+          "truncated": { "name": "Truncated" }
+        }
+      }
+    }
+  },
+  "services": {
+    "backfill": {
+      "name": "Backfill",
+      "description": "Re-import half-hourly consumption for a range of dates, then carry any change in the running totals forward to later hours.",
+      "fields": {
+        "start_date": {
+          "name": "Start date",
+          "description": "First day to re-import (UK local)."
+        },
+        "end_date": {
+          "name": "End date",
+          "description": "Last day to re-import, inclusive (UK local)."
+        },
+        "config_entry_id": {
+          "name": "Meter",
+          "description": "Only re-import this meter. Defaults to every configured meter."
+        }
+      }
+    }
+  }
+}

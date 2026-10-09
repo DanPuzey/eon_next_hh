@@ -1,0 +1,12 @@
+{
+  "entity": {
+    "sensor": {
+      "last_data": { "default": "mdi:clock-check-outline" },
+      "sync_status": { "default": "mdi:cloud-sync-outline" },
+      "missing_intervals": { "default": "mdi:timeline-alert-outline" }
+    }
+  },
+  "services": {
+    "backfill": { "service": "mdi:database-refresh-outline" }
+  }
+}

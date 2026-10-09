@@ -1,0 +1,13 @@
+{
+  "domain": "eon_next_hh",
+  "name": "E.ON Next Half-Hourly",
+  "codeowners": ["@DanPuzey"],
+  "config_flow": true,
+  "dependencies": ["recorder"],
+  "documentation": "https://github.com/DanPuzey/eon_next_hh",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/DanPuzey/eon_next_hh/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}
