@@ -1,0 +1,29 @@
+{
+  "data": {
+    "properties": [
+      {
+        "id": "1234567",
+        "electricityMeterPoints": [
+          {
+            "mpan": "1900000000001",
+            "direction": "IMPORT",
+            "meters": [
+              {
+                "serialNumber": "21E0000001"
+              }
+            ]
+          },
+          {
+            "mpan": "1900000000002",
+            "direction": "EXPORT",
+            "meters": [
+              {
+                "serialNumber": "21E0000001"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

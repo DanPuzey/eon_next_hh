@@ -1,0 +1,47 @@
+{
+  "data": {
+    "property": {
+      "measurements": {
+        "pageInfo": {
+          "hasNextPage": true,
+          "endCursor": "YXJyYXljb25uZWN0aW9uOjI="
+        },
+        "edges": [
+          {
+            "node": {
+              "value": "0.351999999999999980",
+              "unit": "kwh",
+              "readAt": "2025-10-26T00:30:00+01:00",
+              "source": "Amphio",
+              "startAt": "2025-10-26T00:00:00+01:00",
+              "endAt": "2025-10-26T00:30:00+01:00",
+              "durationInSeconds": 1800
+            }
+          },
+          {
+            "node": {
+              "value": "0.435999999999999999",
+              "unit": "kwh",
+              "readAt": "2025-10-26T01:00:00+01:00",
+              "source": "Amphio",
+              "startAt": "2025-10-26T00:30:00+01:00",
+              "endAt": "2025-10-26T01:00:00+01:00",
+              "durationInSeconds": 1800
+            }
+          },
+          {
+            "node": {
+              "value": "0.841999999999999971",
+              "unit": "kwh",
+              "readAt": "2025-10-26T01:30:00+01:00",
+              "source": "Amphio",
+              "startAt": "2025-10-26T01:00:00+01:00",
+              "endAt": "2025-10-26T01:30:00+01:00",
+              "durationInSeconds": 1800
+            }
+          }
+        ]
+      }
+    }
+  }
+}

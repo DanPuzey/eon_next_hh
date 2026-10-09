@@ -1,0 +1,13 @@
+{
+  "errors": [
+    {
+      "message": "Too many requests.",
+      "extensions": {
+        "errorType": "APPLICATION",
+        "errorCode": "KT-CT-1199",
+        "errorClass": "THROTTLING"
+      }
+    }
+  ],
+  "data": null
+}
